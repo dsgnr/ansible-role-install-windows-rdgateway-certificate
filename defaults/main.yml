@@ -1,0 +1,4 @@
+---
+windows_certificate_dir: "C:\\Temp\\SSL\\{{ certificate_tld }}"
+windows_import_path: "{{ windows_certificate_dir }}\\{{ certificate_tld }}.pfx"
+rdbroker_fqdn: "v-rds001.ad.handsoff.cloud"

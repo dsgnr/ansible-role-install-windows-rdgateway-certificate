@@ -1,0 +1,17 @@
+---
+
+- name: "Import the {{ certificate_tld }} into Windows Store"
+  win_certificate_store:
+    path: "{{ windows_import_path }}"
+    key_exportable: yes
+    state: present
+
+    #- win_shell: "Set-RDCertificate -Role RDWebAccess -ImportPath C:\\Temp\\SSL\\handsoff.cloud\\handsoff.cloud.pfx  -ConnectionBroker v-rds001.ad.handsoff.cloud"
+    # become_method: runas
+    #become_user: Administrator
+
+- name: Copy folder contents recursively
+  win_copy:
+    src: scripts/install.ps1
+    dest: C:\Temp\install.ps1
+
